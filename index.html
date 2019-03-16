@@ -1,0 +1,308 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Developing a Microservice architecture with JHipster</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/star.css">
+		<link rel="stylesheet" href="css/material-icons.css">
+
+		<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="#3E8ACC" data-transition="none" data-background-transition="none">
+					<div style="font-family:Pacifico;font-size:120%;">Developing a Microservice architecture with JHipster</div>
+					<img src="img/family1.png" style="border:none;box-shadow:none;width:35%"/>
+					<hr class="star-light" style="line-height:1">
+					<div style="font-family:Pacifico;font-size:80%;">Pierre Besson</div>
+					<div style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size:60%;">Bordeaux JUG, March 21st, 2019</div>
+					<img src="img/ippon.png" width="15%" style="border:none;box-shadow:none;background-color:#3e8acc;"/>
+				</section>
+				<section data-background="#3E8ACC" data-transition="none" data-background-transition="none">
+					<div style="font-family:Pacifico;font-size:120%;">Developing a Microservice architecture with JHipster</div>
+					<img src="img/family2.png" style="border:none;box-shadow:none;width:35%"/>
+					<hr class="star-light" style="line-height:1">
+					<div style="font-family:Pacifico;font-size:80%;">Pierre Besson</div>
+					<div style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size:60%;">Bordeaux JUG, March 21st, 2019</div>
+					<img src="img/ippon.png" width="15%" style="border:none;box-shadow:none;background-color:#3e8acc;"/>
+				</section>
+				<section data-background="#3E8ACC" data-transition="none" data-background-transition="none">
+					<div style="font-family:Pacifico;font-size:120%;">Developing a Microservice architecture with JHipster</div>
+					<img src="img/family3.png" style="border:none;box-shadow:none;width:35%"/>
+					<hr class="star-light" style="line-height:1">
+					<div style="font-family:Pacifico;font-size:80%;">Pierre Besson</div>
+					<div style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size:60%;">Bordeaux JUG, March 21st, 2019</div>
+					<img src="img/ippon.png" width="15%" style="border:none;box-shadow:none;background-color:#3e8acc;"/>
+				</section>
+				<section data-background="#3E8ACC" data-transition="none" data-background-transition="none">
+					<div style="font-family:Pacifico;font-size:120%;">Developing a Microservice architecture with JHipster</div>
+					<img src="img/family4.png" style="border:none;box-shadow:none;width:35%"/>
+					<hr class="star-light" style="line-height:1">
+					<div style="font-family:Pacifico;font-size:80%;">Pierre Besson</div>
+					<div style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size:60%;">Bordeaux JUG, March 21st, 2019</div>
+					<img src="img/ippon.png" width="15%" style="border:none;box-shadow:none;background-color:#3e8acc;"/>
+				</section>
+				<section>
+					<section>
+						<h3>Who am I ?</h3>
+						<hr class="star-primary">
+						<div style="float:left;width:50%;">
+							<img src="img/photo.jpeg" width="260" style="box-shadow:none;border:none"/>
+							<h3>Pierre Besson</h3>
+							<p><a href="http://twitter.com/pibesson"><i class="fa fa-twitter"></i>
+	@pibesson</a></p>
+							<p><a href="mailto:pbesson@ippon.fr">pbesson@ippon.fr</a></p>
+						</div>
+						<br>
+						<br>
+						<div style="float:right;width:50%;font-size:80%">
+							<ul>
+								<li>Java developer @IpponTech</li>
+								<li>FullStack & DevOps</li>
+								<li>JHipster core team member</li>
+								<li>Favorite technologies:
+									<ul style="list-style-type: none">
+										<li>🍃 Spring</li>
+										<li>🐳 Docker</li>
+										<li>☸️ Kubernetes</li>
+									</ul>
+								</li>
+						</div>
+					</section>
+					<section>
+						<img src="img/ippon.png" alt="" style="border:none;box-shadow:none" width="25%">
+						<ul>
+							<li>380 collaborators worldwide (France, USA, Australia)</li>
+							<li>6 cities in France : Paris, Nantes, Lyon, Bordeaux, Toulouse, Lille</li>
+						</ul>
+						<img src="img/ippon-rooftop.jpg" alt="" width="44%">
+						<img src="img/ippon-devoxx.jpg" alt="" width="51%">
+					</section>
+				</section>
+			</section>
+			<section>
+					<section>
+						<h2>Microservices ?</h2>
+						<div style="font-size: 200%;color:greenyellow"> <i class="fa fa-cloud"></i> <i class="fa fa-cloud"></i> <i class="fa fa-cloud"></i></div>
+						<h4 style="font-size:70%">Why microservices?</h4>
+						<h4 style="font-size:70%">Microservices patterns</h4>
+						<h4 style="font-size:70%">Beyond the hype</h4>
+					</section>
+					<section>
+						<h3>Why microservices</h3>
+						<hr class="star-primary">
+ 							 <div style="text-align: left; float: left;width:40%">
+								<img src="img/building-microservices.jpg" width="90%"" style="border:none;">
+							</div>
+ 							 <div style="text-align: right; float: right;width:60%">
+							<ul style="font-size: 70%;list-style-type: none">
+								<li class="fragment"><i class="fa fa-cubes"></i> “Microservices are small, autonomous services that work together” (Sam Newman)</li>
+								<br>
+								<li class="fragment"><i class="fa fa-sitemap"></i> Scale development in your organisation by conceiving your software as a distributed system</li>
+								<br>
+								<li class="fragment"><i class="fa fa-hand-o-up"></i> Emphasis on :
+									 <ul style="font-size: 90%;">
+										 <li>Technology Heterogeneity</li>
+										 <li>Evolutionary architecture</li>
+										 <li>Resilience</li>
+										 <li>Ease and speed of deployment</li>
+										 <li>Organizational Alignment</li>
+										 <li>Composability</li>
+									</ul>
+								</li>
+							</ul>
+							</div>
+					</section>
+					<section>
+						<h3>Microservices patterns</h3>
+						<img src="img/PatternsRelatedToMicroservices.jpg" width="80%">
+						<a style="font-size: 50%" href="http://microservices.io/patterns/microservices.html">microservices.io/patterns/microservices.html</a>
+						</section>
+						<section>
+						<h3>Beyond the hype</h3>
+						<hr class="star-primary">
+						<p style="font-size: 80%" ></p>
+									<ul style="font-size: 70%;">
+										 <li class="fragment">Not simpler than monoliths</li>
+										 <li class="fragment">Choosing the right decomposition is hard</li>
+										 <li class="fragment">“<strong>Architect’s Dream, Developer’s Nightmare</strong>”</li>
+										 <li class="fragment">Good idea to start with a monolith</li>
+										 <li class="fragment"><strong>You are not Google</strong></li>
+									</ul>
+						</section>		
+			</section>
+			<section>
+					<section>
+						<h2>JHipster as a microservice platform</h2>
+						<div style="font-size: 200%;color: gold"><i class="fa fa-fort-awesome"></i></div>
+						<h4 style="font-size:70%">JHipster goals</h4>
+						<h4 style="font-size:70%">Extending JHipster for microservices</h4>
+						<h4 style="font-size:70%">Monolith vs Microservices</h4>
+						<h4 style="font-size:70%">Technologies used<h4>
+						<h4 style="font-size:70%">The JHipster Microservice Stack</h4>
+					</section>
+					<section>
+						<h3>JHipster goals</h3>
+						<div style="font-size: 200%;color:lightskyblue"><img src="img/logo/logo-jhipster2x.png" width="15%" style="border:none;box-shadow:none;"></div>
+						<hr class="star-primary">
+						<ul style="font-size: 90%;list-style-type: none;">
+							<li class="fragment">🏗️ Provide <strong>scaffolding</strong> for a Full Stack application</li>
+							<li class="fragment">💠 Based on <strong>modern technologies</strong></li>
+							<li class="fragment">🔧 Maximize development <strong>productivity</strong> with tooling</li>
+							<li class="fragment">📈 <strong>Production ready</strong> (maintainable, secure, scalable)</li>
+							<!--<li><strong>DevOps ready</strong>: provide configuration for docker, CI...</li>-->
+						</ul>
+					</section>
+					<section>
+						<h2>JHipster</h2>
+						<hr class="star-primary">
+						<h2>from</h2>
+						<h2 style="color:lightskyblue"> monolith <i class="fa fa-cube"></i></h2>
+						<h2>to</h2>
+						<h2 style="color:orangered">microservices <i class="fa fa-cubes"></i></h2>
+					</section>
+					<section>
+						<h3>Extending JHipster for a microservice architecture</h3>
+						<div style="font-size: 200%;color:orangered"><i class="fa fa-cubes"></i></div>
+						<hr class="star-primary">
+						<ul style="font-size: 80%;list-style-type: none;">
+							<li class="fragment">🏗️ Generate several <strong>independent</strong> microservices and front-ends</li>
+							<li class="fragment"><i class="fa fa-terminal"></i>️ ️Work <strong>out of the box</strong> in dev and in prod !</li>
+							<li class="fragment"><i class="fa fa-cloud"></i> Configure service discovery and centralized configuration</li>
+							<li class="fragment">🔒Provide distributed <strong>security</strong> options (JWT, Oauth2)</li>
+							<li class="fragment"><i class="fa fa-puzzle-piece"></i> Generate entities back-end and front-end separately</li>
+							<li class="fragment"><i class="fa fa-rocket"></i> Be <strong>DevOps ready</strong>: provide configuration for docker, CI-CD, Kubernetes...</li>
+							<li class="fragment"><i class="fa fa-tachometer"></i> Provide a <strong>Monitoring</strong> solution</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Monolith vs Microservices</h3>
+						<hr class="star-primary">
+						<p>
+						<ul style="list-style-type:none; font-size: 70%">
+						<li class="fragment" style="float:left"><span><i class="fa fa-cube"></i> Monolith:</span></li>
+						<br>
+						<li class="fragment">
+							<ul style="float:left">
+								<li>One application (Back-end + Front-end)</li>
+							</ul>
+						</li>
+						<br><br>
+						<li class="fragment" style="float:left"><span><i class="fa fa-cubes"></i> Microservice architecture:</span></li>
+						<br>
+						<li class="fragment">
+							<ul style="float:left;width:50%">
+								<li class="fragment" style="float:left;text-decoration: underline;list-style-type: none;">Spring Cloud stack</li>
+								<li class="fragment">Registry</li>
+								<li class="fragment">Microservices (back-end only)</li>
+								<li class="fragment">API Gateway (front-end + proxy)</li>
+								<li class="fragment">(Optional) OAuth2 server: UAA, Keycloak</li>
+							</ul>
+							<u class="fragment" style="float:right;">Istio stack (WIP)</u><br>
+							<ul style="float:right;width:50%">
+								<li class="fragment">Microservices (back-end only)</li>
+								<li class="fragment">Istio sidecars (Client side LB + policies)</li>
+								<li class="fragment">Istio Gateway</li>
+								<li class="fragment">Frontend (deployed independently)</li>
+							</ul>
+						</li>
+						</ul>
+						</p>
+					</section>
+					<section>
+						<h3>JHipster Spring Cloud stack</h3>
+						<hr class="star-primary">
+						<ul>
+						<li style="font-size: 80%">Mature and successfuly used in production at dozens of companies !</li>
+						<li style="font-size: 80%">Rely on Spring Boot and Spring Cloud abstractions:<!-- to implement microservice patterns:--></li>
+							<ul style="font-size: 80%;list-style-type: none;">
+								<li class="fragment"><i class="fa fa-cloud"></i> Service discovery: Eureka/Consul</li>
+								<li class="fragment"><i class="fa fa-sliders"></i> Centralized configuration: Spring Cloud Config</li>
+								<li class="fragment">⛩️ API Gateway: Zuul</li>
+								<li class="fragment">🔀 Client side load balancing: Ribbon</li>
+								<li class="fragment">⚡ Circuit Breaker: Hystrix</li>
+							</ul>
+						</ul>
+							<!--<div>Fill in the gaps from an Hello World demo to a production ready microservice</div>-->
+					</section>
+					<section>
+						<h3>The JHipster Microservice Stack</h3>
+						<hr class="star-primary">
+						<div style="font-size:80%">Added value added over the base Spring Cloud stack:</div>
+						<br>
+							<ul style="font-size: 70%;list-style-type:none">
+								<li class="fragment"><i class="fa fa-television"></i> <strong>JHipster Registry</strong>: Eureka + Config server + Management</li>
+								<li class="fragment">⛩️ <strong>JHipster Gateway</strong>: API management with Zuul and Swagger docs</li>
+								<li class="fragment">🔁 <strong>CI-CD Configuration</strong>: Pipelines for Jenkins 🤵, Travis 👷, Gitlab <i class="fa fa-gitlab"></i></li>
+								<li class="fragment">🚀 <strong>Deployments</strong>: Docker 🐋, Kubernetes ☸️, OpenShift ⭕</li>
+								<li class="fragment"><i class="fa fa-tachometer"></i> <strong>JHipster Console</strong>: logs + metrics + traces (with ELK, Zipkin and Prometheus)</li>
+							</ul>
+					</section>
+					<section>
+						<h4>JHipster Microservice Architecture</h4>
+						<img src="img/microservices_architecture_2.png" alt="" width="90%" style="border:none;box-shadow:none">
+						<a href="http://www.jhipster.tech/microservices-architecture/" style="font-size:60%">jhipster.tech/microservices-architecture/</a>
+					</section>
+				</section>
+				<section>
+					<h2>Show time</h2>
+					<span style="color:red;font-size:300%">🎆</span>
+					<h4 style="font-size:70%">Using JHipster to develop microservices</h4>
+					<h4 style="font-size:70%">Running the full architecure with docker</h4>
+				</section>
+				<section>
+					<h2>Let's go to production </h2>
+					<span style="color:red;font-size:300%">🚀</span>	
+					<h4 style="font-size:70%">Deploying microservices on Kubernetes</h4>
+				</section>
+				<section>
+				<section>
+					<h2>Questions ?</h2>
+					<p><a href="http://twitter.com/pibesson"><i class="fa fa-twitter"></i>
+@pibesson</a></p>
+					<p><a href="https://github.com/PierreBesson"><i class="fa fa-github"></i> PierreBesson</a></p>
+					<p><a href="mailto:pbesson@ippon.fr"><i class="fa fa-envelope"></i> pbesson@ippon.fr</a></p>
+					<p>Slides available online<br><a href="https://pierrebesson.github.io/pres-jhipster-bordeaux-jug-2019/">pierrebesson.github.io/pres-jhipster-bordeaux-jug-2019/</a></p>
+					<p><br><i class="fa fa-github"></i> <a href="https://github.com/PierreBesson/pres-jhipster-bordeaux-jug-2019">PierreBesson/pres-jhipster-bordeaux-jug-2019</a>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+				controls: false,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
