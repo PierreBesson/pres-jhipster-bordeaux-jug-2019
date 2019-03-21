@@ -141,14 +141,15 @@
 						<h3>Beyond the hype</h3>
 						<hr class="star-primary">
 						<p style="font-size: 80%" ></p>
-									<ul style="font-size: 70%;">
-										 <li class="fragment">Not simpler than monoliths</li>
-										 <li class="fragment">Choosing the right decomposition is hard</li>
-										 <li class="fragment">“<strong>Architect’s Dream, Developer’s Nightmare</strong>”</li>
-										 <li class="fragment">Good idea to start with a monolith</li>
-										 <li class="fragment"><strong>You are not Google</strong></li>
-									</ul>
-						</section>		
+							<ul style="font-size: 70%;">
+									<li class="fragment">Not simpler than monoliths</li>
+									<li class="fragment">Choosing the right decomposition is hard</li>
+									<li class="fragment">Good idea to start with a monolith</li>
+									<li class="fragment">“<strong>Architect’s Dream, Developer’s Nightmare</strong>”</li>
+									<li class="fragment"><strong>"You are not Google"</strong></li>
+									<li class="fragment">Demands great efforts to change your organisation culture to fit the microservice world</li>
+							</ul>
+						</section>
 			</section>
 			<section>
 					<section>
@@ -187,7 +188,7 @@
 						<ul style="font-size: 80%;list-style-type: none;">
 							<li class="fragment">🏗️ Generate several <strong>independent</strong> microservices and front-ends</li>
 							<li class="fragment"><i class="fa fa-terminal"></i>️ ️Work <strong>out of the box</strong> in dev and in prod !</li>
-							<li class="fragment"><i class="fa fa-cloud"></i> Configure service discovery and centralized configuration</li>
+							<li class="fragment"><i class="fa fa-cloud"></i> Implement Microservice patterns</li>
 							<li class="fragment">🔒Provide distributed <strong>security</strong> options (JWT, Oauth2)</li>
 							<li class="fragment"><i class="fa fa-puzzle-piece"></i> Generate entities back-end and front-end separately</li>
 							<li class="fragment"><i class="fa fa-rocket"></i> Be <strong>DevOps ready</strong>: provide configuration for docker, CI-CD, Kubernetes...</li>
@@ -210,47 +211,31 @@
 						<li class="fragment" style="float:left"><span><i class="fa fa-cubes"></i> Microservice architecture:</span></li>
 						<br>
 						<li class="fragment">
-							<ul style="float:left;width:50%">
-								<li class="fragment" style="float:left;text-decoration: underline;list-style-type: none;">Spring Cloud stack</li>
-								<li class="fragment">Registry</li>
+							<ul style="float:left">
+								<li class="fragment">Service Registry</li>
 								<li class="fragment">Microservices (back-end only)</li>
-								<li class="fragment">API Gateway (front-end + proxy)</li>
+								<li class="fragment">API Gateway</li>
+								<li class="fragment">Front-ends</li>
 								<li class="fragment">(Optional) OAuth2 server: UAA, Keycloak</li>
 							</ul>
-							<u class="fragment" style="float:right;">Istio stack (WIP)</u><br>
+							<!-- <u class="fragment" style="float:right;">Istio stack (WIP)</u><br>
 							<ul style="float:right;width:50%">
 								<li class="fragment">Microservices (back-end only)</li>
 								<li class="fragment">Istio sidecars (Client side LB + policies)</li>
 								<li class="fragment">Istio Gateway</li>
 								<li class="fragment">Frontend (deployed independently)</li>
-							</ul>
+							</ul> -->
 						</li>
 						</ul>
 						</p>
 					</section>
 					<section>
-						<h3>JHipster Spring Cloud stack</h3>
-						<hr class="star-primary">
-						<ul>
-						<li style="font-size: 80%">Mature and successfuly used in production at dozens of companies !</li>
-						<li style="font-size: 80%">Rely on Spring Boot and Spring Cloud abstractions:<!-- to implement microservice patterns:--></li>
-							<ul style="font-size: 80%;list-style-type: none;">
-								<li class="fragment"><i class="fa fa-cloud"></i> Service discovery: Eureka/Consul</li>
-								<li class="fragment"><i class="fa fa-sliders"></i> Centralized configuration: Spring Cloud Config</li>
-								<li class="fragment">⛩️ API Gateway: Zuul</li>
-								<li class="fragment">🔀 Client side load balancing: Ribbon</li>
-								<li class="fragment">⚡ Circuit Breaker: Hystrix</li>
-							</ul>
-						</ul>
-							<!--<div>Fill in the gaps from an Hello World demo to a production ready microservice</div>-->
-					</section>
-					<section>
 						<h3>The JHipster Microservice Stack</h3>
 						<hr class="star-primary">
-						<div style="font-size:80%">Added value added over the base Spring Cloud stack:</div>
+						<div style="font-size:70%">2 supported options: <i class="fa fa-cloud"></i> Spring Cloud & ⛵Istio</div>
 						<br>
 							<ul style="font-size: 70%;list-style-type:none">
-								<li class="fragment"><i class="fa fa-television"></i> <strong>JHipster Registry</strong>: Eureka + Config server + Management</li>
+								<li class="fragment"><i class="fa fa-television"></i> <strong>JHipster Registry</strong>: Application dashboard with management screens</li>
 								<li class="fragment">⛩️ <strong>JHipster Gateway</strong>: API management with Zuul and Swagger docs</li>
 								<li class="fragment">🔁 <strong>CI-CD Configuration</strong>: Pipelines for Jenkins 🤵, Travis 👷, Gitlab <i class="fa fa-gitlab"></i></li>
 								<li class="fragment">🚀 <strong>Deployments</strong>: Docker 🐋, Kubernetes ☸️, OpenShift ⭕</li>
@@ -258,10 +243,100 @@
 							</ul>
 					</section>
 					<section>
-						<h4>JHipster Microservice Architecture</h4>
+						<h3>Spring Cloud stack</h3>
+						<hr class="star-primary">
+						<ul style="font-size: 70%">
+						<li class="fragment">Mature and successfuly used in production at dozens of companies</li>
+							<ul style="list-style-type: none;">
+								<li class="fragment"><i class="fa fa-cloud"></i> Service discovery: Eureka/Consul</li>
+								<li class="fragment"><i class="fa fa-sliders"></i> Centralized configuration: Spring Cloud Config</li>
+								<li class="fragment">⛩️ API Gateway: Zuul</li>
+								<li class="fragment">🔀 Client side load balancing: Ribbon</li>
+								<li class="fragment">⚡ Circuit Breaker: Hystrix</li>
+							</ul>
+						<li class="fragment">Even though Netflix component are now in maintenance mode, choosing them is still a very good choice !</li>
+						</ul>
+					</section>
+					<section>
+						<h4>JHipster Spring Cloud Architecture</h4>
 						<img src="img/microservices_architecture_2.png" alt="" width="90%" style="border:none;box-shadow:none">
 						<a href="http://www.jhipster.tech/microservices-architecture/" style="font-size:60%">jhipster.tech/microservices-architecture/</a>
 					</section>
+					<section>
+						<h3>Istio stack</h3>
+						<hr class="star-primary">
+						<ul style="font-size: 70%">
+						<li class="fragment">A <i>Service Mesh</i> solution to implement microservice patterns in the platform</li>
+							<ul style="list-style-type: none;">
+								<li class="fragment"><i class="fa fa-cloud"></i> Service discovery: Kubernetes services</li>
+								<li class="fragment"><i class="fa fa-sliders"></i> Centralized configuration: Kubernetes ConfigMaps</li>
+								<li class="fragment">⛩️ API Gateway: Istio Gateway</li>
+								<li class="fragment">🔀 Client side load balancing: Istio Traffic management (through sidecar)</li>
+								<li class="fragment">⚡ Circuit Breaker: Istio Traffic management (through sidecar)</li>
+								<!-- <li class="fragment">+ Additional capabilities: Canary testing, Traffic observability</li> -->
+							</ul>
+						</ul>
+						<figure class="fragment" >
+							<img style="border:none;box-shadow:none;margin:0;padding:0" width="35%" src="img/LoadBalancing.svg" alt="">
+							<figcaption style="font-size: 50%"><a href="https://istio.io/docs/concepts/traffic-management/">istio.io/docs/concepts/traffic-management</a></caption>
+						</figure>
+					</section>
+					<section>
+							<h4>JHipster Istio Architecture</h4>
+							<figure>
+								<img src="img/Istio-jhipster.png" alt="" width="90%" style="border:none;box-shadow:none">
+								<figcaption style="font-size:60%"><a href="https://blog.ippon.tech/istio-architectures-generated-by-jhipster/">blog.ippon.tech/istio-architectures-generated-by-jhipster</a> (Fabien Arrault)</figcaption>
+							</figure>
+						</section>
+					<section>
+						<h4>Summary</h3>
+						<hr class="star-primary">
+						<ul style="font-size: 70%">
+						<table style="border-bottom: none">
+							<thead>
+								<tr>
+									<th></th>
+									<th>Spring Cloud</th>
+									<th>Istio</th>
+								</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td><b>Service Discovery</b></td>
+								<td>Dedicated service (Eureka/Consul)</td>
+								<td>Provided by the platform (Kubernetes)</td>
+							</tr>
+							<tr>
+								<td><b>Configuration</b></td>
+								<td>Dedicated service (Spring Config Server)</td>
+								<td>Provided by platform (Kubernetes ConfigMaps)</td>
+							</tr>
+							<tr>
+								<td><b>Load Balancing</b></td>
+								<td>In the app (Ribbon)</td>
+								<td>In the sidecar (Envoy)</td>
+							</tr>
+							<tr>
+								<td><b>Circuit Breaker</b></td>
+								<td>In the app (Hystrix)</td>
+								<td>In the sidecar (Envoy)</td>
+							</tr>
+							<tr>
+								<td><b>API Gateway</b></td>
+								<td>Dedicated service (Zuul)</td>
+								<td>Istio Gateway (Envoy)</td>
+							</tr>
+						</tbody>
+						</table>
+					</section>
+					<!-- <section>
+						<h5>JHipster Monitoring</h3>
+						<hr class="star-primary">
+						<div style="display: flex;align-items: center;justify-content: center; height: 100%">
+							<img src="img/3ways.png" alt="architecture" style="border:none;box-shadow: none;" width="30%" height="30%">
+							<img src="img/jhipster-console.svg" alt="architecture" style="border:none;box-shadow: none;">
+						</div>
+					</section> -->
 				</section>
 				<section>
 					<h2>Show time</h2>
@@ -281,7 +356,7 @@
 @pibesson</a></p>
 					<p><a href="https://github.com/PierreBesson"><i class="fa fa-github"></i> PierreBesson</a></p>
 					<p><a href="mailto:pbesson@ippon.fr"><i class="fa fa-envelope"></i> pbesson@ippon.fr</a></p>
-					<p>Slides available online<br><a href="https://pierrebesson.github.io/pres-jhipster-bordeaux-jug-2019/">pierrebesson.github.io/pres-jhipster-bordeaux-jug-2019/</a></p>
+					<p>Slides available online<br><a href="https://pierre-besson.fr/pres-jhipster-bordeaux-jug-2019/">pierre-besson.fr/pres-jhipster-bordeaux-jug-2019</a></p>
 					<p><br><i class="fa fa-github"></i> <a href="https://github.com/PierreBesson/pres-jhipster-bordeaux-jug-2019">PierreBesson/pres-jhipster-bordeaux-jug-2019</a>
 				</section>
 			</div>
